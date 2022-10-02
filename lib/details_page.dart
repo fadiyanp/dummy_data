@@ -4,9 +4,8 @@ import 'tourism_place.dart';
 class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final id = $username as String;
-    final selectedPlace =
-    PLACES_DUMMY_DATA.firstWhere((place) => place.id == id);
+    string name = "$username";
+    final selectedPlace = TourismPlace.firstWhere((place) => place.name == name);
     return Scaffold(
       appBar: AppBar(
         title: Text("Detail Informasi"),
@@ -64,7 +63,7 @@ class DetailsScreen extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   Icon(Icons.money_off, size: 40,),
-                  Text("Tiket Masuk: Rp ${selectedPlace.price}", style: Theme.of(context).textTheme.title,)
+                  Text("Tiket Masuk: Rp ${selectedPlace.ticketPrice}", style: Theme.of(context).textTheme.title,)
                 ],
               ),
             ),
